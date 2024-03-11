@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Richieste } from '../../richieste';
-import { RichiestaServiceService } from '../../richiesta-service.service';
+import { Richieste } from '../../../richieste';
+import { RichiestaServiceService } from '../../../richiesta-service.service';
 
 
 
@@ -21,6 +21,8 @@ export class ElencoRichiestaComponent implements OnInit{
   }
   getRichieste(){
     this.richiestaService.getRichieste().subscribe(data=>{
+      console.log(data);
+      
       this.richieste=data;
     })
 

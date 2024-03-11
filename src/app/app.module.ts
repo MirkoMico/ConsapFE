@@ -7,8 +7,10 @@ import { HomeComponent } from './componenti/home/home.component';
 import { LoginComponent } from './componenti/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout.component';
-import { ElencoRichiestaComponent } from './componenti/elenco-richiesta/elenco-richiesta.component';
-import { InserimentoRichiestaComponent } from './componenti/inserimento-richiesta/inserimento-richiesta.component';
+import { ElencoRichiestaComponent } from './componenti/richieste/elenco-richiesta/elenco-richiesta.component';
+import { InserimentoRichiestaComponent } from './componenti/richieste/inserimento-richiesta/inserimento-richiesta.component';
+import { ElencoComponent } from './componenti/commesse/elenco/elenco.component';
+import { InserisciComponent } from './componenti/commesse/inserisci/inserisci.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { InserimentoRichiestaComponent } from './componenti/inserimento-richiest
     LoginComponent,
     LayoutComponent,
     ElencoRichiestaComponent,
-    InserimentoRichiestaComponent
+    InserimentoRichiestaComponent,
+    ElencoComponent,
+    InserisciComponent
   ],
   imports: [
     BrowserModule,

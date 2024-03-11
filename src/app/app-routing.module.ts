@@ -2,15 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componenti/home/home.component';
 import { LoginComponent } from './componenti/login/login.component';
-import { ElencoRichiestaComponent } from './componenti/elenco-richiesta/elenco-richiesta.component';
-import { InserimentoRichiestaComponent } from './componenti/inserimento-richiesta/inserimento-richiesta.component';
+import { ElencoRichiestaComponent } from './componenti/richieste/elenco-richiesta/elenco-richiesta.component';
+import { InserimentoRichiestaComponent } from './componenti/richieste/inserimento-richiesta/inserimento-richiesta.component';
+import { InserisciComponent } from './componenti/commesse/inserisci/inserisci.component';
+import { ElencoComponent } from './componenti/commesse/elenco/elenco.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, children:[
 
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'elenco-richiesta', component: ElencoRichiestaComponent},
-    {path: 'inserimento-richiesta',component:InserimentoRichiestaComponent}
+    {path: 'inserimento-richiesta',component:InserimentoRichiestaComponent},
+    {path: 'inserisci',component:InserisciComponent},
+    {path: 'elenco',component:ElencoComponent},
   ]},
   {path: 'login', component: LoginComponent},
 ];

@@ -22,7 +22,9 @@ export class RichiestaServiceService {
     return this.http.get<any>(`${this.baseUrl}`);
   }
 
-  public createRichiesta(){}
+  public createRichiesta(richieste: Richieste): Observable<Object>{
+    return  this.http.post(`${this.baseUrl}`,richieste);
+  }
   
 
 

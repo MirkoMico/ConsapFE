@@ -1,0 +1,193 @@
+
+ 
+
+    <!-- Main content -->
+   <!--  <section class="content">
+
+     
+       <div class="card">
+        <div class="card-body row">
+          <div class="col-5 text-center d-flex align-items-center justify-content-center">
+            <div class="">
+              <h2>CONSAP<strong></strong></h2>
+              <p class="lead mb-5">Inserire Richiesta<br>
+                Compilare i campi desiderati
+              </p>
+            </div>
+          </div>  -->
+
+
+          <div class="content-wrapper">
+
+          
+         <form  (ngSubmit)="onSubmit()">
+
+
+          <div class="row margine" >
+          <div class="col-3">
+            <div class="form-group">
+              <label for="inputName">Numero Ticket</label>
+              <input type="text" id="numeroTicket"  class="form-control" [(ngModel)]="nuovaRichiesta.numeroTicket"/>
+            </div>
+           </div>
+
+            <div class="col-9">
+
+            <div class="form-group">
+                <label for="inputEmail">Oggetto</label>
+                <input type="email" id="oggetto" class="form-control" [(ngModel)]="nuovaRichiesta.oggetto" />
+              </div>
+            </div>
+
+        </div>
+
+        <div class="row margine" >
+
+             <div class="col-3"  >
+                <div class="form-group">
+                    <label for="inputMessage">Data di Creazione</label>
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                      <input type="datetime-local" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric">
+                      </div>
+                   <!--  <input type="text" id="dataCreazione" class="form-control" [(ngModel)]="nuovaRichiesta.dataCreazione" > --> 
+                  </div>
+                </div> 
+
+
+               
+                  
+
+
+
+
+
+            <div class="col-3">
+
+            <div class="form-group">
+
+              <label for="inputSubject">Applicativo</label>
+               <select class="form-control" id="Applicativo">
+                <option *ngFor="let applicativo of applicativi">{{applicativo.descApplicativo}}</option>
+               
+              </select> 
+             <!--  <input  type="text" id="Applicativo" class="form-control" [(ngModel)]="nuovaRichiesta.applicativo.descApplicativo" /> -->
+            </div>
+        </div>
+
+      
+
+          
+
+            <div class="col-3">
+            <div class="form-group">
+                
+              <label for="inputMessage">Stato Richiesta Consap</label>
+              <select class="form-control" id="Applicativo">
+                <option *ngFor="let statoRichiesteConsap of statiRichiestaConsap" >
+                {{statoRichiesteConsap.descStatoRichiestaConsap}}</option>
+              </select> 
+            <!--   <input type="text" id="statoRichiestaConsap" class="form-control" [(ngModel)]="nuovaRichiesta.statoRichiestaConsap.descStatoRichiestaConsap" > -->
+            </div>
+        </div>
+
+        
+          
+        <div class="col-3">
+
+              <div class="form-group">
+                <label for="inputMessage">Stato Approvazione Consap</label>
+                <select class="form-control" id="Applicativo">
+                    <option *ngFor="let statoApprovazioneConsap of statiApprovazioneConsap" >
+                    {{statoApprovazioneConsap.descStatoApprovazioneConsap}}</option>
+                  </select> 
+               <!--  <input type="text" id="statoRichiestaConsap" class="form-control" [(ngModel)]="nuovaRichiesta.statoApprovazioneConsap.descStatoApprovazioneConsap" > -->
+              </div>
+
+            </div>
+            </div>
+
+            <div class="row margine" >
+
+                <div class="col-3">
+              <div class="form-group">
+                <label for="inputMessage">Stato Approvazione OS</label>
+                <select class="form-control" id="Applicativo">
+                    <option *ngFor="let stato of statiApprovazioneOs" >
+                    {{stato.descStatoApprovazioneOs}}</option>
+                  </select>
+               <!--  <input type="text" id="statoApprovazioneOs" class="form-control" [(ngModel)]="nuovaRichiesta.statoApprovazioneOs.descStatoApprovazioneOs" > -->
+              </div>
+              </div>
+
+              <div class="col-3">
+              <div class="form-group">
+                <label for="inputMessage">Stato Richiesta OS</label>
+                <select class="form-control" id="Applicativo">
+                    <option *ngFor="let statoRichiestaOs of statiRichiesteOs" >
+                    {{statoRichiestaOs.descStatoRichiestaOs}}</option>
+                  </select>
+               <!--  <input type="text" id="statoRichiestaOs" class="form-control" [(ngModel)]="nuovaRichiesta.statoRichiestaOs.descStatoRichiestaOs" > -->
+              </div>
+              </div>
+
+              <div class="col-3">
+              <div class="form-group">
+                <label for="inputMessage">Data Stima Fine</label>
+               <!--  <input type="text" id="dataStimaFine" class="form-control" [(ngModel)]="nuovaRichiesta.dataStimaFine" > -->
+               <div class="input-group-prepend">
+                <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                <input type="datetime-local" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric">
+              </div>
+              </div>
+              </div>
+
+
+
+
+
+
+
+              <div class="col-3">
+              <div class="form-group">
+                <label for="inputMessage">Importo</label>
+                <input type="text" id="Importo" class="form-control" [(ngModel)]="nuovaRichiesta.importo" >
+              </div>
+              </div>
+
+            </div>
+
+
+            <div class="row margine" >
+
+                <div class="col-3">
+              <div class="form-group">
+                <label for="inputMessage">Codice Commessa</label>
+                <select class="form-control" id="Applicativo">
+                    <option value=" " >seleziona</option>
+                  </select>
+               <!--  <input type="text" id="codiceCommessa" class="form-control" [(ngModel)]="nuovaRichiesta.codiceCommessa.descCodiceCommessa" --> 
+              </div>
+              </div>
+              </div>
+              
+
+              <div class="col-3 margine">
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary" value="Invia">
+            </div>
+        </div>
+      </form>
+        </div>
+        
+
+          
+      <!--   </div>
+      </div>
+
+    </section> -->
+    <!-- /.content -->
+  
+  <!-- /.content-wrapper -->
+
+

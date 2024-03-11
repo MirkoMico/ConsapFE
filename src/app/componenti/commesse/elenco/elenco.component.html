@@ -1,7 +1,11 @@
+<div class="content-wrapper">
+
+<p>Elenco Commesse</p>
+
 <div class="col-12">
     <div class="card">
     <div class="card-header">
-    <h3 class="card-title">Elenco Richieste CONSAP</h3>
+    <h3 class="card-title">Elenco Commesse</h3>
     <div class="card-tools">
     <div class="input-group input-group-sm" style="width: 150px;">
     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -18,20 +22,16 @@
     <table class="table table-hover text-nowrap">
     <thead>
     <tr>
-    <th>Numero Ticket</th>
-    <th>Applicativo</th>
-    <th>Oggetto</th>
-    <th>Stato Richiesta CONSAP</th>
-    <th>Data di creazione</th>
+    <th>Numero Commessa</th>
+    <th>Descrizione Commessa</th>
+   
     </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let richiesta of richieste">
-            <td>{{richiesta.numeroTicket}}</td>
-            <td></td>
-            <td>{{richiesta.oggetto}}</td>
-            <td></td>
-            <td>{{richiesta.dataCreazione}}</td>
+        <tr *ngFor="let commessa of commesse">
+            <td>{{commessa.numeroCommessa}}</td>
+            <td>{{commessa.descCommessaOs}}</td>
+           
         
         </tr>
     </tbody>
@@ -41,3 +41,5 @@
     </div>
     
     </div>
+    </div>
+
