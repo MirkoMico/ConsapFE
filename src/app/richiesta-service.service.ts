@@ -22,8 +22,13 @@ export class RichiestaServiceService {
     return this.http.get<any>(`${this.baseUrl}`);
   }
 
-  public createRichiesta(richieste: Richieste): Observable<Object>{
-    return  this.http.post(`${this.baseUrl}`,richieste);
+  public createRichiesta(richieste:string){
+    const headers= {'Content-Type': 'application/json'}
+    return  this.http.post(`${this.baseUrl}`,richieste,{headers});
+  }
+
+  public getRichiestaById(id: any):Observable<Richieste>{
+    return this.http.get<any>(`${this.baseUrl}/${id}`);
   }
   
 

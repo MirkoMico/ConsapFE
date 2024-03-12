@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Richieste } from '../../../richieste';
 import { RichiestaServiceService } from '../../../richiesta-service.service';
+import { Router } from '@angular/router';
+
+
 
 
 
@@ -15,7 +18,7 @@ export class ElencoRichiestaComponent implements OnInit{
 
  
 
-  constructor(private richiestaService: RichiestaServiceService){}
+  constructor(private richiestaService: RichiestaServiceService, private router: Router ){}
   ngOnInit(): void {
     this.getRichieste();
   }
@@ -27,5 +30,24 @@ export class ElencoRichiestaComponent implements OnInit{
     })
 
   }
+  redirect(richiesta:any){
+    console.log(JSON.stringify(richiesta)+"invio?")
+    console.log("CI SONO")
+    this.router.navigate(["/visualizza"],{queryParams:{pippo : JSON.stringify(richiesta)}});
+  } 
+
+  redirectToModif(richiesta:any){
+    console.log(JSON.stringify(richiesta)+"invio?")
+    console.log("CI SONO")
+    this.router.navigate(["/visualizza"],{queryParams:{pippo : JSON.stringify(richiesta)}});
+  } 
+
+
+
+ /*  redirect(id:any){
+    localStorage.setItem('id',id);
+    console.log('ID da passare',id);
+    this.router.navigate(["/visualizza"])
+  } */
 
 }

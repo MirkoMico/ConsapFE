@@ -17,17 +17,23 @@
           </div>  -->
 
 
-          <div class="content-wrapper">
+          <div class="content-wrapper ">
+
+            
+            <div class="col-sm-6 margine">
+              <h1 class="m-0">Inserisci Richiesta </h1>
+              </div>
+             
 
           
-         <form  (ngSubmit)="onSubmit()">
+         <form class="marContenitore" [formGroup]="addRichiestaForm" (ngSubmit)="onSubmit()">
 
 
           <div class="row margine" >
           <div class="col-3">
             <div class="form-group">
               <label for="inputName">Numero Ticket</label>
-              <input type="text" id="numeroTicket"  class="form-control" [(ngModel)]="nuovaRichiesta.numeroTicket"/>
+              <input type="text" id="numeroTicket"  class="form-control" formControlName="numeroTicket"/>
             </div>
            </div>
 
@@ -35,7 +41,7 @@
 
             <div class="form-group">
                 <label for="inputEmail">Oggetto</label>
-                <input type="email" id="oggetto" class="form-control" [(ngModel)]="nuovaRichiesta.oggetto" />
+                <input type="email" id="oggetto" class="form-control" formControlName="oggetto" />
               </div>
             </div>
 
@@ -48,7 +54,8 @@
                     <label for="inputMessage">Data di Creazione</label>
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                      <input type="datetime-local" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric">
+                      <input type="date" class="form-control" data-inputmask-alias="date" 
+                      data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric" formControlName="dataCreazione" >
                       </div>
                    <!--  <input type="text" id="dataCreazione" class="form-control" [(ngModel)]="nuovaRichiesta.dataCreazione" > --> 
                   </div>
@@ -67,8 +74,11 @@
             <div class="form-group">
 
               <label for="inputSubject">Applicativo</label>
-               <select class="form-control" id="Applicativo">
-                <option *ngFor="let applicativo of applicativi">{{applicativo.descApplicativo}}</option>
+               <select class="form-control" id="Applicativo" formControlName="applicativo">
+                
+                <option *ngFor="let applicativo of applicativi"  value="{{applicativo.applicativoId}}">
+                  {{applicativo.descApplicativo}}</option>
+                
                
               </select> 
              <!--  <input  type="text" id="Applicativo" class="form-control" [(ngModel)]="nuovaRichiesta.applicativo.descApplicativo" /> -->
@@ -83,8 +93,8 @@
             <div class="form-group">
                 
               <label for="inputMessage">Stato Richiesta Consap</label>
-              <select class="form-control" id="Applicativo">
-                <option *ngFor="let statoRichiesteConsap of statiRichiestaConsap" >
+              <select class="form-control" id="StatoRichiestaConsap" formControlName="statoRichiestaConsap">
+                <option *ngFor="let statoRichiesteConsap of statiRichiestaConsap" value="{{statoRichiesteConsap.statoRichiestaConsapId}}" >
                 {{statoRichiesteConsap.descStatoRichiestaConsap}}</option>
               </select> 
             <!--   <input type="text" id="statoRichiestaConsap" class="form-control" [(ngModel)]="nuovaRichiesta.statoRichiestaConsap.descStatoRichiestaConsap" > -->
@@ -97,8 +107,8 @@
 
               <div class="form-group">
                 <label for="inputMessage">Stato Approvazione Consap</label>
-                <select class="form-control" id="Applicativo">
-                    <option *ngFor="let statoApprovazioneConsap of statiApprovazioneConsap" >
+                <select class="form-control" id="statoApprovazioneConsap" formControlName="statoApprovazioneConsap">
+                    <option *ngFor="let statoApprovazioneConsap of statiApprovazioneConsap" value="{{statoApprovazioneConsap.statoApprovazioneConsapId}}" >
                     {{statoApprovazioneConsap.descStatoApprovazioneConsap}}</option>
                   </select> 
                <!--  <input type="text" id="statoRichiestaConsap" class="form-control" [(ngModel)]="nuovaRichiesta.statoApprovazioneConsap.descStatoApprovazioneConsap" > -->
@@ -112,9 +122,9 @@
                 <div class="col-3">
               <div class="form-group">
                 <label for="inputMessage">Stato Approvazione OS</label>
-                <select class="form-control" id="Applicativo">
-                    <option *ngFor="let stato of statiApprovazioneOs" >
-                    {{stato.descStatoApprovazioneOs}}</option>
+                <select class="form-control" id="statoApprovazioneOs"  formControlName="statoApprovazioneOs">
+                    <option *ngFor="let statoApprovazioneOs of statiApprovazioneOs" value="{{statoApprovazioneOs.statoApprovazioneOsId}}" >
+                    {{statoApprovazioneOs.descStatoApprovazioneOs}}</option>
                   </select>
                <!--  <input type="text" id="statoApprovazioneOs" class="form-control" [(ngModel)]="nuovaRichiesta.statoApprovazioneOs.descStatoApprovazioneOs" > -->
               </div>
@@ -123,9 +133,10 @@
               <div class="col-3">
               <div class="form-group">
                 <label for="inputMessage">Stato Richiesta OS</label>
-                <select class="form-control" id="Applicativo">
-                    <option *ngFor="let statoRichiestaOs of statiRichiesteOs" >
-                    {{statoRichiestaOs.descStatoRichiestaOs}}</option>
+                <select class="form-control" id="statoRichiestaOs" formControlName="statoRichiestaOs">
+                    <option *ngFor="let statoRichiestaOs of statiRichiesteOs" value="{{statoRichiestaOs.statoRichiestaOsId}}" >
+                    {{statoRichiestaOs.descStatoRichiestaOs}}
+                  </option>
                   </select>
                <!--  <input type="text" id="statoRichiestaOs" class="form-control" [(ngModel)]="nuovaRichiesta.statoRichiestaOs.descStatoRichiestaOs" > -->
               </div>
@@ -137,7 +148,8 @@
                <!--  <input type="text" id="dataStimaFine" class="form-control" [(ngModel)]="nuovaRichiesta.dataStimaFine" > -->
                <div class="input-group-prepend">
                 <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                <input type="datetime-local" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric">
+                <input type="date" class="form-control" data-inputmask-alias="date" 
+                data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric" formControlName="dataStimaFine" >
               </div>
               </div>
               </div>
@@ -151,7 +163,8 @@
               <div class="col-3">
               <div class="form-group">
                 <label for="inputMessage">Importo</label>
-                <input type="text" id="Importo" class="form-control" [(ngModel)]="nuovaRichiesta.importo" >
+                <input type="text" id="Importo" class="form-control" formControlName="importo"
+                name="importo" >
               </div>
               </div>
 
@@ -163,8 +176,9 @@
                 <div class="col-3">
               <div class="form-group">
                 <label for="inputMessage">Codice Commessa</label>
-                <select class="form-control" id="Applicativo">
-                    <option value=" " >seleziona</option>
+                <select class="form-control" id="commessaOs" formControlName="commessaOs">
+                    <option *ngFor="let commessaOs of commesse" value="{{commessaOs.commessaOsId}} " >
+                    {{commessaOs.numeroCommessa}}</option>
                   </select>
                <!--  <input type="text" id="codiceCommessa" class="form-control" [(ngModel)]="nuovaRichiesta.codiceCommessa.descCodiceCommessa" --> 
               </div>
@@ -172,9 +186,9 @@
               </div>
               
 
-              <div class="col-3 margine">
+              <div class="col-3 marContenitore margine">
             <div class="form-group">
-              <input type="submit" class="btn btn-primary" value="Invia">
+              <input type="submit" class="btn btn-block btn-outline-primary btn-lg"  value="Invia">
             </div>
         </div>
       </form>

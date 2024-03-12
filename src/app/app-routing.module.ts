@@ -6,6 +6,8 @@ import { ElencoRichiestaComponent } from './componenti/richieste/elenco-richiest
 import { InserimentoRichiestaComponent } from './componenti/richieste/inserimento-richiesta/inserimento-richiesta.component';
 import { InserisciComponent } from './componenti/commesse/inserisci/inserisci.component';
 import { ElencoComponent } from './componenti/commesse/elenco/elenco.component';
+import { VisualizzaComponent } from './componenti/richieste/visualizza/visualizza.component';
+import { ModificaComponent } from './componenti/richieste/modifica/modifica.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, children:[
@@ -15,6 +17,8 @@ const routes: Routes = [
     {path: 'inserimento-richiesta',component:InserimentoRichiestaComponent},
     {path: 'inserisci',component:InserisciComponent},
     {path: 'elenco',component:ElencoComponent},
+    {path: 'visualizza',component:VisualizzaComponent},
+    {path: 'modifica',component:ModificaComponent},
   ]},
   {path: 'login', component: LoginComponent},
 ];

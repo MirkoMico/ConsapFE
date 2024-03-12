@@ -1,16 +1,16 @@
 export class Richieste {
-    id!: number
+    //id!: number
     numeroTicket!: number
-    applicativo!: {applicativoId:number,descApplicativo: string }
+    applicativo!: {applicativoId:number,descApplicativo: any }
     oggetto!: string
-    statoRichiestaConsap!:{ statoRichiestaConsapId: number, descStatoRichiestaConsap:string}
+    statoRichiestaConsap!:{ statoRichiestaConsapId: number, descStatoRichiestaConsap:any}
     dataCreazione!:Date
-    statoApprovazioneConsap!:{statoApprovazioneConsap: number,descStatoApprovazioneConsap: string}
-    statoApprovazioneOs!:{statoApprovazioneOs: number, descStatoApprovazioneOs: string}
-    statoRichiestaOs!:{statoRichiestaOs: number, descStatoRichiestaOs: string}
+    statoApprovazioneConsap!:{statoApprovazioneConsapId: number,descStatoApprovazioneConsap: any}
+    statoApprovazioneOs!:{statoApprovazioneOsId: number, descStatoApprovazioneOs: any}
+    statoRichiestaOs!:{statoRichiestaOsId: number, descStatoRichiestaOs: any}
     dataStimaFine!: Date
     importo!: number
-    codiceCommessa!:{codiceCommessa:number, descCodiceCommessa: string }
+    commessaOs!:{commessaOsId: number,numeroCommessa:any, descCommessaOS: any }
 
 
 }
