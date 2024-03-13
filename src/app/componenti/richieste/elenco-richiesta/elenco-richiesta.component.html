@@ -77,7 +77,7 @@
                         <td>{{richiesta.statoRichiestaConsap.descStatoRichiestaConsap}}</td>
                         <td>{{richiesta.dataCreazione}}</td>
                         <th><button type="button" (click)="redirect(richiesta)" class="btn btn-block btn-outline-primary btn-sm">Visualizza</button></th> 
-                        <th><button type="button" (click)="redirectToModif(richiesta)" class="btn btn-block btn-outline-success btn-sm" >Modifica</button></th> 
+                         <th><button type="button" routerLink="modifica/{{richiesta.id}}" class="btn btn-block btn-outline-success btn-sm" >Modifica</button></th>  
                        
 
                     </tr>

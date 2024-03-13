@@ -30,6 +30,17 @@ export class RichiestaServiceService {
   public getRichiestaById(id: any):Observable<Richieste>{
     return this.http.get<any>(`${this.baseUrl}/${id}`);
   }
+
+  public putRichiesta(id:number, richieste:String){
+   const headers= {'Content-Type': 'application/json'}
+    return  this.http.put(`${this.baseUrl}/${id}`,richieste,{headers});
+
+  }
+  public deleteRichiesta(id:number){
+   // const headers= {'Content-Type': 'application/json'}
+     return  this.http.delete(`${this.baseUrl}/${id}`);
+ 
+   }
   
 
 

@@ -33,7 +33,7 @@
           <div class="col-3">
             <div class="form-group">
               <label for="inputName">Numero Ticket</label>
-              <input type="text" id="numeroTicket"  class="form-control" formControlName="numeroTicket"/>
+              <input type="text" id="numeroTicket" minlength="5" maxlength="5" oninput="this.value=this.value.replace(/[^0-9]/g,'')"  class="form-control" formControlName="numeroTicket"/>
             </div>
            </div>
 

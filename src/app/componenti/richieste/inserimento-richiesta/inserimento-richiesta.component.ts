@@ -36,7 +36,7 @@ export class InserimentoRichiestaComponent implements OnInit {
 
   addRichiesta(){
 
-    console.log(this.addRichiestaForm.value.statoRichiestaConsap);
+  
     
 
     this.nuovaRichiesta={

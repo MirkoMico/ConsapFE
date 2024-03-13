@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class ElencoRichiestaComponent implements OnInit{
 
-  richieste: Richieste[] | undefined
+  richieste: any;
 
  
 
@@ -36,11 +36,12 @@ export class ElencoRichiestaComponent implements OnInit{
     this.router.navigate(["/visualizza"],{queryParams:{pippo : JSON.stringify(richiesta)}});
   } 
 
-  redirectToModif(richiesta:any){
+  /* redirectToModif(richiesta:any){
+   // localStorage.setItem('id',richiesta.id)
     console.log(JSON.stringify(richiesta)+"invio?")
     console.log("CI SONO")
-    this.router.navigate(["/visualizza"],{queryParams:{pippo : JSON.stringify(richiesta)}});
-  } 
+    this.router.navigate(["/modifica"],{queryParams:{pippo : JSON.stringify(richiesta)}});
+  }  */
 
 
 

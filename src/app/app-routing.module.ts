@@ -18,7 +18,8 @@ const routes: Routes = [
     {path: 'inserisci',component:InserisciComponent},
     {path: 'elenco',component:ElencoComponent},
     {path: 'visualizza',component:VisualizzaComponent},
-    {path: 'modifica',component:ModificaComponent},
+    {path: 'elenco-richiesta/modifica/:id',component:ModificaComponent},
+    
   ]},
   {path: 'login', component: LoginComponent},
 ];
